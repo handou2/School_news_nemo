@@ -8,6 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
+![Alt text]("http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff")
 启动项目前别忘了安装依赖:npm i.\
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
