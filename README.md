@@ -44,3 +44,5 @@ npm install react-router-dom
 安装 axios:npm i axios.\
 
 这里给大家推荐一个动态背景库:https://github.com/lindelof/particles-bg 地址在这里.\
+
+显示进度条的插件:npm i --save-dev @types/nprogress

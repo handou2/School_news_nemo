@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./signIn.module.scss";
+import styles from "./SignIn.module.scss";
 import { Form, Button, Input, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
@@ -13,7 +13,7 @@ export const SignIn = () => {
         `/users?username=${values.username}&password=${values.password}&roleState=true&_expand=role`
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.length === 0) {
           message.error("用户名或密码不匹配");
         } else {
@@ -55,9 +55,13 @@ export const SignIn = () => {
   return (
     <div style={{ height: "100%", overflow: "hidden" }}>
       <ParticlesBg type="circle" bg={true} config={config} />
-      <div className="formContainer">
-        <div className="logintitle">校园新闻发布管理系统</div>
-        <Form name="normal_login" className="login-form" onFinish={onFinish}>
+      <div className={styles.formContainer}>
+        <div className={styles.logintitle}>校园新闻发布管理系统</div>
+        <Form
+          name="normal_login"
+          className={styles["login-form"]}
+          onFinish={onFinish}
+        >
           <Form.Item
             name="username"
             rules={[{ required: true, message: "Please input your Username!" }]}
@@ -81,7 +85,7 @@ export const SignIn = () => {
             <Button
               type="primary"
               htmlType="submit"
-              className="login-form-button"
+              className={styles["login-form-button"]}
             >
               登录
             </Button>
