@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./SignIn.module.scss";
-import { Form, Button, Input, message } from "antd";
+import { Form, Button, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import ParticlesBg from "particles-bg";
 import { useNavigate } from "react-router-dom";
+import { NotifyError, NotifySuccess } from "../../components";
+
 export const SignIn = () => {
   const navigate = useNavigate();
   const onFinish = (values: any) => {
@@ -13,12 +15,15 @@ export const SignIn = () => {
         `/users?username=${values.username}&password=${values.password}&roleState=true&_expand=role`
       )
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         if (res?.data?.length === 0) {
-          message.error("用户名或密码不匹配");
+          NotifyError("用户名或密码不匹配");
         } else {
           localStorage.setItem("token", JSON.stringify(res?.data[0]));
-          navigate("/");
+          NotifySuccess("登录成功");
+          setTimeout(() => {
+            navigate("/");
+          }, 200);
         }
       });
   };
