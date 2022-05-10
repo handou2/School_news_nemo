@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-[![登录页面]("http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff").\
+!("http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff")
 
 启动项目前别忘了安装依赖:npm i.\
 Runs the app in the development mode.\
@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `ts重构项目-first day`
+### `ts重构项目`
 
 安装各种包哈哈.\
 
@@ -38,7 +38,8 @@ antd:npm add antd (别忘了在 src/App.css 文件顶部引入 @import '~antd/di
 
 ---pages(这里放我们的页面)
 
-关于路由:我们的侧边栏路由由后端传入(动态路由).\
+关于路由:我们的侧边栏路由由后端传入(动态渲染).\
+
 npm install react-router-dom
 
 安装 redux:npm install redux --save.\

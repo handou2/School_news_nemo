@@ -20,10 +20,10 @@ export const SignIn = () => {
           NotifyError("用户名或密码不匹配");
         } else {
           localStorage.setItem("token", JSON.stringify(res?.data[0]));
-          NotifySuccess("登录成功");
           setTimeout(() => {
             navigate("/");
-          }, 200);
+          }, 300);
+          NotifySuccess("登录成功");
         }
       });
   };

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { SideMenu, TopHeader } from "../../components";
-import styles from "./SandBox.module.scss";
+import { SideMenu, TopHeader, NewsRouter } from "../../components";
+import "./SandBox.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Layout } from "antd";
@@ -26,7 +26,7 @@ export const SandBox = () => {
             overflow: "auto",
           }}
         >
-          {/* <NewsRouter></NewsRouter> */}
+          <NewsRouter></NewsRouter>
         </Content>
       </Layout>
     </Layout>
