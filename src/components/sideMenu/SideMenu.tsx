@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./signIn.module.scss";
+import styles from "./SideMenu.module.scss";
 import { Button } from "antd";
-export const signIn = () => {
+export const SideMenu = () => {
   return (
     <div>
       <Button>zhuzhu</Button>

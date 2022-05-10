@@ -1,28 +1,20 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { Provider } from "react-redux";
 import { Button } from "antd";
-
+import { IndexRouter } from "../src/router/IndexRouter";
+// import { store,persistor } from './redux/store'
+// import { PersistGate } from 'redux-persist/integration/react'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          <Button type="primary">nemo</Button>
-        </a>
-      </header>
-    </div>
-  );
+  return;
+  // <Provider store={store}>
+  // <PersistGate loading={null} persistor={persistor}>
+  <IndexRouter></IndexRouter>;
+  {
+    /* </PersistGate> */
+  }
+  // </Provider>
 }
 
 export default App;
