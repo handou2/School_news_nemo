@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-[![登录页面]("http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff").\
+!("http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff").\
 
 启动项目前别忘了安装依赖:npm i.\
 Runs the app in the development mode.\
