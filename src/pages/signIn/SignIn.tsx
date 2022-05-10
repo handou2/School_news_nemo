@@ -14,10 +14,10 @@ export const SignIn = () => {
       )
       .then((res) => {
         // console.log(res.data);
-        if (res.data.length === 0) {
+        if (res?.data?.length === 0) {
           message.error("用户名或密码不匹配");
         } else {
-          localStorage.setItem("token", JSON.stringify(res.data[0]));
+          localStorage.setItem("token", JSON.stringify(res?.data[0]));
           navigate("/");
         }
       });
