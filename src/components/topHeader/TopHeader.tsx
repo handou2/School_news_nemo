@@ -24,7 +24,7 @@ export const TopHeader = () => {
         onClick={() => {
           localStorage.removeItem("token");
           // console.log(props.history)
-          navigate("/login");
+          navigate("/signIn");
         }}
       >
         退出
