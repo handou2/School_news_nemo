@@ -3,7 +3,7 @@ import styles from "./SideMenu.module.scss";
 import { Layout, Menu } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -22,7 +22,7 @@ export const SideMenu = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios.get("/rights?_embed=children").then((res) => {
-      console.log(res?.data);
+      // console.log(res?.data);
       setMeun(res?.data);
     });
   }, []);
@@ -31,36 +31,48 @@ export const SideMenu = () => {
   const {
     role: { rights },
   } = JSON.parse(token);
-  const renderMenu = (meun: any) => {
-    return meun.map((item: any) => {
-      if (item.children) {
+  const checkPagePermission = (item: any) => {
+    return item.pagepermisson && rights.includes(item.key);
+  };
+  const renderMenu = (menuList: any) => {
+    return menuList.map((item: any) => {
+      if (item.children?.length > 0 && checkPagePermission(item)) {
         return (
-          // 用路径作为key值
           <SubMenu key={item.key} icon={iconList[item.key]} title={item.title}>
-            {/* //这里可以选择再次map遍历item.children */}
             {renderMenu(item.children)}
           </SubMenu>
         );
       }
       return (
-        <Menu.Item
-          icon={iconList[item.key]}
-          key={item.key}
-          onClick={() => {
-            navigate(item.key);
-          }}
-        >
-          {item.title}
-        </Menu.Item>
+        checkPagePermission(item) && (
+          <Menu.Item
+            icon={iconList[item.key]}
+            key={item.key}
+            onClick={() => {
+              navigate(item.key);
+            }}
+          >
+            {item.title}
+          </Menu.Item>
+        )
       );
     });
   };
+  const selectKeys = [window.location.pathname];
+  console.log(selectKeys, "window.location.pathname");
+  const openKeys = ["/" + window.location.pathname.split("/")[1]];
   return (
     <Sider trigger={null} collapsible>
       <div style={{ display: "flex", height: "100%", flexDirection: "column" }}>
         <div className={styles.logo}>校园新闻发布管理系统</div>
         <div style={{ flex: 1, overflow: "auto" }}>
-          <Menu theme="dark" mode="inline" className="aaaaaaa">
+          <Menu
+            theme="dark"
+            mode="inline"
+            className="aaaaaaa"
+            selectedKeys={selectKeys}
+            defaultOpenKeys={openKeys}
+          >
             {renderMenu(meun)}
           </Menu>
         </div>

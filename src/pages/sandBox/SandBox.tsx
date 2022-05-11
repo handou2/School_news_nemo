@@ -4,6 +4,8 @@ import "./SandBox.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Layout } from "antd";
+import { Home } from "../home/Home";
+import { UserList } from "../user-manage";
 
 const { Content } = Layout;
 
@@ -26,6 +28,7 @@ export const SandBox = () => {
             overflow: "auto",
           }}
         >
+          {/* <UserList /> */}
           <NewsRouter></NewsRouter>
         </Content>
       </Layout>

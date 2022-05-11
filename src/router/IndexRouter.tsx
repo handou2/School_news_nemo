@@ -16,7 +16,7 @@ export const IndexRouter = () => {
             )
           }
         />
-        <Route path="*" element={<div>none</div>} />
+        {/* <Route path="*" element={<div>none</div>} /> */}
       </Routes>
     </BrowserRouter>
   );
