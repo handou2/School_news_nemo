@@ -7,7 +7,6 @@ import "nprogress/nprogress.css";
 import { Layout } from "antd";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Home, UserList, RoleList, RightList } from "../../pages";
-
 const { Content } = Layout;
 
 export const SandBox = () => {

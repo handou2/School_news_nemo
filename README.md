@@ -8,14 +8,6 @@ In the project directory, you can run:
 
 启动项目前别忘了安装依赖: `npm i`
 
-Runs the app in the development mode.
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.
-
-You will also see any lint errors in the console.
-
 ### `ts重构项目`
 
 安装各种包哈哈.
@@ -75,3 +67,12 @@ import { SideMenu, TopHeader, NewsRouter } from "../../components";
 `<Route path="/*" element={<NewsSandBox />} />`
 
 我们将采用 Redux Toolkit 来管理我们的全局状态,这里附上官网地址：http://cn.redux.js.org/redux-toolkit/overview/,其中有介绍相比于直接使用redux带给我们的好处
+
+首页中我们需要引入 Echarts,展示数据
+
+TS 项目中引入 lodash 库的正确姿势:
+
+```
+npm i lodash
+npm i -D @types/lodash
+```
