@@ -58,7 +58,9 @@ export const SideMenu = () => {
       );
     });
   };
+  //找到之前高亮的侧边栏板块
   const selectKeys = [window.location.pathname];
+  //展开菜单项
   const openKeys = ["/" + window.location.pathname.split("/")[1]];
   return (
     <Sider trigger={null} collapsible>
@@ -70,6 +72,7 @@ export const SideMenu = () => {
             mode="inline"
             className="aaaaaaa"
             selectedKeys={selectKeys}
+            //初始展开的菜单项
             defaultOpenKeys={openKeys}
             // items={meun}
           >

@@ -6,10 +6,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Layout } from "antd";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Home } from "../home";
-import { UserList } from "../user-manage";
-import { RoleList } from "../right-manage";
-import { RightList } from "../right-manage";
+import { Home, UserList, RoleList, RightList } from "../../pages";
 
 const { Content } = Layout;
 
@@ -39,6 +36,7 @@ export const SandBox = () => {
             <Route path="/right-manage/right/list" element={<RightList />} />
             <Route path="/" element={<Navigate replace to="/home" />} />
             <Route path="*" element={<div>none</div>} />
+            {/* <Route path="/*" element={<NewsRouter />} /> */}
           </Routes>
           {/* <NewsRouter></NewsRouter> */}
         </Content>

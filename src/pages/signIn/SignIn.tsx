@@ -6,10 +6,23 @@ import axios from "axios";
 import ParticlesBg from "particles-bg";
 import { useNavigate } from "react-router-dom";
 import { NotifyError, NotifySuccess } from "../../components";
+import { useSelector } from "../../redux/hooks";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../redux/user/slice";
 
 export const SignIn = () => {
+  const loading = useSelector((state) => state.user.loading);
+  const error = useSelector((state) => state.user.error);
+  const token = useSelector((state) => state.user.token);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onFinish = (values: any) => {
+    // dispatch(
+    //   signIn({
+    //     username: values.username,
+    //     password: values.password,
+    //   })
+    // );
     axios
       .get(
         `/users?username=${values.username}&password=${values.password}&roleState=true&_expand=role`
@@ -88,6 +101,7 @@ export const SignIn = () => {
           </Form.Item>
           <Form.Item>
             <Button
+              // loading={loading}
               type="primary"
               htmlType="submit"
               className={styles["login-form-button"]}
