@@ -21,7 +21,7 @@ export const SignIn = () => {
         } else {
           localStorage.setItem("token", JSON.stringify(res?.data[0]));
           setTimeout(() => {
-            navigate("/");
+            navigate("/home");
           }, 300);
           NotifySuccess("登录成功");
         }

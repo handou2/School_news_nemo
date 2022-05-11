@@ -7,7 +7,7 @@ export const IndexRouter = () => {
       <Routes>
         <Route path="/signIn" element={<SignIn />} />
         <Route
-          path="/"
+          path="/*"
           element={
             localStorage.getItem("token") ? (
               <SandBox />
@@ -16,7 +16,7 @@ export const IndexRouter = () => {
             )
           }
         />
-        {/* <Route path="*" element={<div>none</div>} /> */}
+        <Route path="*" element={<div>none</div>} />
       </Routes>
     </BrowserRouter>
   );

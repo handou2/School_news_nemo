@@ -18,7 +18,6 @@ import { Spin } from "antd";
 import axios from "axios";
 import { Home } from "../../pages/home/Home";
 import { UserList } from "../../pages/user-manage/UserList";
-
 const LocalRouterMap: any = {
   "/home": Home,
   "/user-manage/list": UserList,

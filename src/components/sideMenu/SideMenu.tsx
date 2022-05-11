@@ -59,7 +59,6 @@ export const SideMenu = () => {
     });
   };
   const selectKeys = [window.location.pathname];
-  console.log(selectKeys, "window.location.pathname");
   const openKeys = ["/" + window.location.pathname.split("/")[1]];
   return (
     <Sider trigger={null} collapsible>
@@ -72,6 +71,7 @@ export const SideMenu = () => {
             className="aaaaaaa"
             selectedKeys={selectKeys}
             defaultOpenKeys={openKeys}
+            // items={meun}
           >
             {renderMenu(meun)}
           </Menu>

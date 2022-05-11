@@ -62,8 +62,12 @@ npm install react-router-dom
 如下我们就可以轻松引入 component 和 page：
 
 ```
-{
 import { SignIn, SandBox } from "../pages";
 import { SideMenu, TopHeader, NewsRouter } from "../../components";
-}
 ```
+
+解决 react-router-dom V6 路由嵌套时子路由无法显示的问题：
+
+在 v6 中，所有路由路径始终是完全匹配,不再像 v4/5 中那样匹配路径前缀.父/根路径需要指定 _ 通配符,以便它们现在可以进行"前缀"匹配,所以解决办法是加上通配符_
+
+`<Route path="/*" element={<NewsSandBox />} />`
