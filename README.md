@@ -32,6 +32,8 @@ antd:`npm add antd` (别忘了在 src/App.css 文件顶部引入 `@import '~antd
 
 好的现在来看一下本项目的架构:.
 
+> > > > > > > 6172588ecdb403f0d92d5492e6150ad66aaad0d8
+
 ```
 --src
     ---components(这里放我们的组件)
@@ -51,15 +53,6 @@ npm install react-router-dom
 这里给大家推荐一个动态背景库: https://github.com/lindelof/particles-bg 地址在这里.
 
 显示进度条的插件: `npm i --save-dev @types/nprogress`.
-
-关于 toastify:
-这里推荐一个消息弹出提示库,地址:https://github.com/fkhadra/react-toastify.
-为了方便使用我们这里需要对 toastify 进行一些封装:npm install --save react-toastify.
-本项目将封装成一个组件,并在 index.tsx 中引入.
-
-这里有个小技巧:component 和 page,为了避免引入组件和页面造成过多杂乱代码的问题.
-我们可以在每一个组件和页面中新建一个 index.ts 文件,作为我们的统一导出文件夹,然后在 components 和 pages 文件夹下新建一个 index.ts 文件,作为每一个小文件夹的导出文件.
-如下我们就可以轻松引入 component 和 page：
 
 ```
 {
