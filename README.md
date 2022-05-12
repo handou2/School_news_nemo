@@ -1,4 +1,4 @@
-![project demo](http://bytes.isekko.cn/FluQihAicVJYPMMNwQEYtPuVKIff)
+![project demo](http://bytes.isekko.cn/Fk2Dna8A48M0fXmCHhh3std_wnGe)
 
 ## Available Scripts
 
@@ -68,7 +68,7 @@ import { SideMenu, TopHeader, NewsRouter } from "../../components";
 
 我们将采用 Redux Toolkit 来管理我们的全局状态,这里附上官网地址：http://cn.redux.js.org/redux-toolkit/overview/,其中有介绍相比于直接使用redux带给我们的好处
 
-首页中我们需要引入 Echarts,展示数据
+首页中我们需要引入 Echarts,展示数据(ps:由于没有找到 Echarts 关于 ts 的官方文档,这里还是采用 js 的写法)
 
 TS 项目中引入 lodash 库的正确姿势:
 

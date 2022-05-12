@@ -10,19 +10,18 @@ import * as Echarts from "echarts";
 import _ from "lodash";
 
 const { Meta } = Card;
-interface itemType {
-  author: string;
-  category: any;
-  id: number;
-  title: string;
-}
-// import axios from 'axios'
+// interface itemType {
+//   author: string;
+//   category: any;
+//   id: number;
+//   title: string;
+// }
 export const Home = () => {
   const [viewList, setviewList] = useState([]);
   const [starList, setstarList] = useState([]);
   const [allList, setallList] = useState([]);
   const [visible, setvisible] = useState(false);
-  const [pieChart, setpieChart] = useState<any>(null);
+  const [pieChart, setpieChart] = useState(null);
   const barRef = useRef();
   const pieRef = useRef();
   useEffect(() => {
@@ -61,8 +60,8 @@ export const Home = () => {
     };
   }, []);
 
-  const renderBarView = (obj: any) => {
-    const baR: any = barRef.current;
+  const renderBarView = (obj) => {
+    const baR = barRef.current;
     var myChart = Echarts.init(baR);
 
     // 指定图表的配置项和数据
@@ -88,7 +87,7 @@ export const Home = () => {
         {
           name: "数量",
           type: "bar",
-          data: Object.values(obj).map((item: any) => item.length),
+          data: Object.values(obj).map((item) => item.length),
         },
       ],
     };
@@ -102,16 +101,11 @@ export const Home = () => {
     };
   };
 
-  const renderPieView = (obj: any) => {
+  const renderPieView = (obj) => {
     //数据处理工作
 
-    var currentList = allList.filter(
-      (item: itemType) => item.author === username
-    );
-    var groupObj = _.groupBy(
-      currentList,
-      (item: itemType) => item.category.title
-    );
+    var currentList = allList.filter((item) => item.author === username);
+    var groupObj = _.groupBy(currentList, (item) => item.category.title);
     var list = [];
     for (var i in groupObj) {
       list.push({
@@ -121,7 +115,7 @@ export const Home = () => {
     }
     var myChart;
     if (!pieChart) {
-      const piR: any = pieRef.current;
+      const piR = pieRef.current;
       myChart = Echarts.init(piR);
       setpieChart(myChart);
     } else {
@@ -161,7 +155,7 @@ export const Home = () => {
 
     option && myChart.setOption(option);
   };
-  const token: any = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   const {
     username,
     region,
@@ -174,9 +168,8 @@ export const Home = () => {
           <Card title="用户最常浏览" bordered={true}>
             <List
               size="small"
-              // bordered
               dataSource={viewList}
-              renderItem={(item: itemType) => (
+              renderItem={(item) => (
                 <List.Item>
                   <a href={`#/news-manage/preview/${item.id}`}>{item.title}</a>
                 </List.Item>
@@ -190,7 +183,7 @@ export const Home = () => {
               size="small"
               // bordered
               dataSource={starList}
-              renderItem={(item: itemType) => (
+              renderItem={(item) => (
                 <List.Item>
                   <a href={`#/news-manage/preview/${item.id}`}>{item.title}</a>
                 </List.Item>
@@ -214,7 +207,7 @@ export const Home = () => {
                     setvisible(true);
 
                     // init初始化
-                    // renderPieView();
+                    renderPieView();
                   }, 0);
                 }}
               />,
@@ -253,24 +246,24 @@ export const Home = () => {
         }}
         visible={visible}
       >
-        {/* <div
+        <div
           ref={pieRef}
           style={{
             width: "100%",
             height: "400px",
             marginTop: "30px",
           }}
-        ></div> */}
+        ></div>
       </Drawer>
 
-      {/* <div
+      <div
         ref={barRef}
         style={{
           width: "100%",
           height: "400px",
           marginTop: "30px",
         }}
-      ></div> */}
+      ></div>
     </div>
   );
 };
